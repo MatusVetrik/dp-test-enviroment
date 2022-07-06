@@ -204,7 +204,7 @@ Navbar
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  border-radius: 2rem;
+
   cursor: pointer;
   transition: var(--transition);
 }
@@ -212,7 +212,7 @@ Navbar
   background: var(--clr-primary-3);
 }
 .toggle-container {
-  position: relative;
+
   margin-top: 0.75rem;
 }
 .toggle-cart {
@@ -367,7 +367,7 @@ Sidebar
   width: 90vw;
   height: 95vh;
   max-width: var(--fixed-width);
-  background: var(--clr-white);
+  background: aliceblue;
   border-radius: var(--radius);
   box-shadow: var(--dark-shadow);
   position: relative;
@@ -393,7 +393,7 @@ Sidebar
   color: var(--clr-grey-1);
 }
 .sidebar-link i {
-  color: var(--clr-grey-5);
+  color: transparent;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
