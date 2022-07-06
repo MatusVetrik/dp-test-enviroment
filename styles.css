@@ -212,7 +212,7 @@ Navbar
   background: var(--clr-primary-3);
 }
 .toggle-container {
-
+position: relative;
   margin-top: 0.75rem;
 }
 .toggle-cart {
