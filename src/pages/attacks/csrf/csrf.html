@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attacks</title>
+    <!-- font-awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="../../../../styles.css" />
+</head>
+
+<body>
+<nav class="navbar page">
+    <div class="nav-center">
+        <!-- links -->
+        <div>
+            <button class="toggle-nav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li>
+                    <a href="/js-e-commerce/index.html" class="nav-link"> home </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/products/products.html" class="nav-link"> products </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/about/about.html" class="nav-link"> about </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="nav-link attacks"> attacks </a>
+                </li>
+            </ul>
+        </div>
+
+        <p class="user-name"></p>
+
+        <button class="log-out__button" id="signOutButton">
+            <a href="../auth/login.html" id="log-out__link">Log out</a>
+        </button>
+
+        <div class="toggle-container">
+            <button class="toggle-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-item-count">1</span>
+        </div>
+    </div>
+</nav>
+<section class="page-hero">
+    <div class="section-center">
+        <h3 class="page-hero-title">Home / Attacks</h3>
+    </div>
+</section>
+<div class="sidebar-overlay">
+    <aside class="sidebar">
+        <!-- close -->
+        <button class="sidebar-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <!-- links -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="/js-e-commerce/index.html" class="sidebar-link">
+                    <i class="fas fa-home fa-fw"></i>
+                    home
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/products/products.html" class="sidebar-link">
+                    <i class="fas fa-couch fa-fw"></i>
+                    products
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/about/about.html" class="sidebar-link">
+                    <i class="fas fa-book fa-fw"></i>
+                    about
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="sidebar-link attacks">
+                    <i class="fas fa-book fa-fw"></i>
+                    attacks
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<div class="cart-overlay">
+    <aside class="cart">
+        <button class="cart-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <header>
+            <h3 class="text-slanted">your bag</h3>
+        </header>
+        <!-- cart items -->
+        <div class="cart-items"></div>
+        <!-- footer -->
+        <footer>
+            <h3 class="cart-total text-slanted">total : $12.99</h3>
+            <button class="cart-checkout btn">checkout</button>
+        </footer>
+    </aside>
+</div>
+<section class="section section-center attacks-page">
+    <br/>
+    <h3>Cross site request forgery (CSRF)</h3>
+    <div class="attack-about">
+        <br>Cross-Site Request Forgery (CSRF) je bezpečnostný problém, pri ktorom útočník
+        manipuluje s overeným používateľom, aby nevedomky vykonal nežiadúce akcie vo webovej
+        aplikácii. Prostredníctvom taktiky sociálneho inžinierstva, ako je posielanie klamlivých
+        odkazov prostredníctvom e-mailu alebo chatu, útočník oklame používateľov, aby vykonali
+        akcie, ktoré sú pre nich prospešné. Pre bežných používateľov to môže zahŕňať neúmyselné
+        akcie, ako je prevod finančných prostriedkov alebo zmena osobných údajov. Vo vážnej-
+        ších prípadoch, ak sa obeťou CSRF stane administrátorský účet, predstavuje riziko pre
+        bezpečnosť celej webovej aplikácie.<br><br>
+    </div>
+    <br/>
+    <h3>Instructions</h3><br>
+    <ol>
+        <li>Tento krat si predatavime utol zvany cross site request forgery (CSRF), ktory spociva v tom, ze sa posielaju requesty na server z ineho zdroja ako je nasa aplikacia. To znamena,
+            ze sa odosle rovnaky request ako by sme odoslali z aplikacie ale z akehokolvek miesta na internete. V dnesnej dobe ma vacsina prehliadacov defaultne nastaveny atribuy v hlavicke
+            requestov, ktory znaci, ze request moze byt poslany len v ramci jednej domeny alebo aj “sameorigin”.</li>
+        <li>Utok si predstavime na systeme Damn Vulnerable Web App (DVWA), kde mozeme predviest idealny scenar na demonstraciu csrf a to zmena hesla prihlaseneho pouzivatela.</li>
+        <li>Instalacia DVWA je detailne zobrazene na tejto linke -> link. Idealnym riesenim je si naclonovat repozitar a spusti cez Docker-compose.</li>
+        <li>Po prihlaseni (admin:password) sa presunieme na polozku “DVWA security” v menu aplikacie a nastavime security level na “low”.</li>
+        <li>Teraz sa mozeme presunut na polozku “csrf” v menu. Tu sa nachadza formular na zmenu hesla.</li>
+        <li>Zmeňe heslo a po potvrdeni si vsimnime atrubuty v url. Pri odoslani formularu sa posle request, ktory obsahuje nove heslo a kontrolu noveho hesla.</li>
+        <li>Vytvorime si skript, ktory takyto request odosle z ineho zdroju ako je aplikacia. Vytvorme html subor, ktory vyzera nasledovne.</li>
+        <li>V zdroji obrazku sa nachadza linka na rovnaku adresu ako bol request pre zmenu hesla. Heslo mozeme zmenit na lubovolnu hodnotu, musi byt vsal rovnaka v novom hesle aj v kontrole.</li>
+        <li>Subor si ulozme na plochu a otvorme ho v prehliadaci.</li>
+        <li>Request sa automaticky odoslal a ked si otvorime vyvojarsku konzolu a network tal uvidime, ze prebehol uspesne. Mozeme nam rovno kliknut v konzole a nastane redirect na csrf obrazovku DVWA.</li>
+        <li>Teraz sa mozeme skusit odhlasit a prihlasit novymi prihlasovacimi udajmi aby sme si overili, ze utok naozaj prebehol uspesne.</li>
+    </ol>
+    <div class="video__wrapper">
+        <video controls >
+            <source src="/js-e-commerce/src/assets/videos/csrf.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+<script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
+<script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+</body>
+</html>

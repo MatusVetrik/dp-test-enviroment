@@ -11,11 +11,10 @@
     />
 
     <!-- styles css -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../../../styles.css" />
   </head>
 
   <body>
-    <!-- navbar -->
     <nav class="navbar page">
       <div class="nav-center">
         <!-- links -->
@@ -25,23 +24,26 @@
           </button>
           <ul class="nav-links">
             <li>
-              <a href="index.html" class="nav-link">
-                home
-              </a>
+              <a href="/js-e-commerce/index.html" class="nav-link"> home </a>
             </li>
             <li>
-              <a href="products.html" class="nav-link">
-                products
-              </a>
+              <a href="/js-e-commerce/src/pages/products/products.html" class="nav-link"> products </a>
             </li>
             <li>
-              <a href="about.html" class="nav-link">
-                about
-              </a>
+              <a href="/js-e-commerce/src/pages/about/about.html" class="nav-link"> about </a>
+            </li>
+            <li>
+              <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="nav-link attacks"> attacks </a>
             </li>
           </ul>
         </div>
- 
+
+        <p class="user-name"></p>
+
+        <button class="log-out__button" id="signOutButton">
+          <a href="../auth/login.html" id="log-out__link">Log out</a>
+        </button>
+
         <div class="toggle-container">
           <button class="toggle-cart">
             <i class="fas fa-shopping-cart"></i>
@@ -50,13 +52,11 @@
         </div>
       </div>
     </nav>
-    <!-- hero -->
     <section class="page-hero">
       <div class="section-center">
         <h3 class="page-hero-title">Home / About</h3>
       </div>
     </section>
-    <!-- sidebar -->
     <div class="sidebar-overlay">
       <aside class="sidebar">
         <!-- close -->
@@ -66,27 +66,32 @@
         <!-- links -->
         <ul class="sidebar-links">
           <li>
-            <a href="index.html" class="sidebar-link">
+            <a href="/js-e-commerce/index.html" class="sidebar-link">
               <i class="fas fa-home fa-fw"></i>
               home
             </a>
           </li>
           <li>
-            <a href="products.html" class="sidebar-link">
+            <a href="/js-e-commerce/src/pages/products/products.html" class="sidebar-link">
               <i class="fas fa-couch fa-fw"></i>
               products
             </a>
           </li>
           <li>
-            <a href="about.html" class="sidebar-link">
+            <a href="/js-e-commerce/src/pages/about/about.html" class="sidebar-link">
               <i class="fas fa-book fa-fw"></i>
               about
+            </a>
+          </li>
+          <li>
+            <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="sidebar-link attacks">
+              <i class="fas fa-book fa-fw"></i>
+              attacks
             </a>
           </li>
         </ul>
       </aside>
     </div>
-    <!-- cart -->
     <div class="cart-overlay">
       <aside class="cart">
         <button class="cart-close">
@@ -99,30 +104,29 @@
         <div class="cart-items"></div>
         <!-- footer -->
         <footer>
-          <h3 class="cart-total text-slanted">
-            total : $12.99
-          </h3>
+          <h3 class="cart-total text-slanted">total : $12.99</h3>
           <button class="cart-checkout btn">checkout</button>
         </footer>
       </aside>
     </div>
-    <!-- about -->
     <section class="section section-center about-page">
       <div class="title">
-        <h2><span></span> Our history</h2>
+        <h2><span></span>About vulnerable e-shop</h2>
       </div>
       <p class="about-text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-        accusantium sapiente tempora sed dolore esse deserunt eaque excepturi,
-        delectus error accusamus vel eligendi, omnis beatae. Quisquam, dicta.
-        Eos quod quisquam esse recusandae vitae neque dolore, obcaecati incidunt
-        sequi blanditiis est exercitationem molestiae delectus saepe odio
-        eligendi modi porro eaque in libero minus unde sapiente consectetur
-        architecto. Ullam rerum, nemo iste ex, eaque perspiciatis nisi, eum
-        totam velit saepe sed quos similique amet. Ex, voluptate accusamus
-        nesciunt totam vitae esse iste.
+        This app represents simple eshop with basic authentication. You can
+        pracitce your hacking skills and try to steal data, break authenticaiton
+        or manipulate app's processes and flows. Authentication for this
+        applications is accquired by FirebaseAuth. Also this eshop is
+        backendless, so every state or important entity is stored in local
+        storage or indexDB in application storage. You can find step by step
+        instructions for possible attack at navbar option "Attacks" where are
+        shown some attacks which are abusing some apps security flaws created by
+        vulnerable javascript functions. This is everything you need to know,
+        enjoy :)
       </p>
     </section>
-    <script type="module" src="./src/pages/about.js"></script>
+    <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
+    <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
   </body>
 </html>

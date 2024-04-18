@@ -1,4 +1,4 @@
-import { allProductsUrl } from './utils.js';
+import { allProductsUrl } from '../utils/utils.js';
 
 const fetchProducts = async () => {
   const response = await fetch(allProductsUrl).catch((err) => console.log(err));

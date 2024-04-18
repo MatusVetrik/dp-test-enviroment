@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attacks</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -10,9 +11,9 @@
     />
 
     <!-- styles css -->
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Furniture Store</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
   </head>
+
   <body>
   <nav class="navbar page">
     <div class="nav-center">
@@ -53,7 +54,7 @@
   </nav>
   <section class="page-hero">
     <div class="section-center">
-      <h3 class="page-hero-title">Home</h3>
+      <h3 class="page-hero-title">Home / Attacks</h3>
     </div>
   </section>
   <div class="sidebar-overlay">
@@ -108,37 +109,37 @@
         </footer>
       </aside>
     </div>
-    <section class="section featured">
-      <div class="title">
-        <h2><span></span> Products</h2>
+    <section class="section section-center attacks-page">
+      <br/>
+      <h3>Incorrect Regular Expression (ReDOS)</h3>
+      <div class="attack-about">
+        <br>...<br><br>
       </div>
-      <div class="featured-center section-center">
-        <h2 class="section-loading">loading...</h2>
-        <!-- single product -->
-        <!-- <article class="product">
-          <div class="product-container">
-            <img src="./images/main-bcg.jpeg" class="product-img img" alt="" />
-           
-            <div class="product-icons">
-              <a href="product.html?id=1" class="product-icon">
-                <i class="fas fa-search"></i>
-              </a>
-              <button class="product-cart-btn product-icon" data-id="1">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <footer>
-            <p class="product-name">name</p>
-            <h4 class="product-price">$9.99</h4>
-          </footer>
-        </article> -->
-        <!-- end of single product -->
+      <br/>
+      <h3>Instructions</h3><br>
+      <ol>
+        <li>Pri tomto utoku si ukazeme DOS (Denial of service) utok pouzitim zranitelnej funkcionality regex vyrokov</li>
+        <li>V testovacom prostredi mame zobrazeny input pre email. Vlozeny email bude zvalidovany a regex vyrok vyhodnoti, ci ide o validny alebo nespravne zostaveny email</li>
+        <li>Pri nahlade zdrojoveho kodu mozeme vidiet, ze regex retazec je velmi dlhy a komplxeny, z coho vyplyva, ze jeho vypocet moze v istych pripadoch trvat dlhsie</li>
+        <li>Na zaklade tohto poznatku skusime pretazit vypocet a tym spomalit alebo celkovo vysadit beh aplikacie</li>
+        <li>Do emailoveho vstupu mozeme postupne zapisovat dlhsie a dlhsie hodnoty, cim spozorujeme, ze vypocty priebehaju vyrazne dlhsie kazdym pokusom</li>
+        <li>Finalne vlozime do inputu retazec dlzky najmenej 30 znakov</li>
+        <li>Ako mozeme vidiet aplikacia nereaguje, refresh stranky nefunguje. Aplikovali sme uspesny reDOS utok.</li>
+      </ol>
+      <div class="func-eval-demo">
+        <h3>Verify your email</h3>
+        <input id="email-verify-input" placeholder="Enter email..." />
+        <div id="email-verify-result" ></div>
       </div>
-      <a href="./src/pages/products/products.html" class="btn"> all products </a>
+        <div class="video__wrapper">
+          <video controls >
+            <source src="/js-e-commerce/src/assets/videos/redos.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
     </section>
-    <script type="module" src="./index.js"></script>
   <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
   <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+  <script type="module" src="./redos.js"></script>
   </body>
 </html>

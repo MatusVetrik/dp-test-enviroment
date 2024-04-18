@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attacks</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -10,9 +11,9 @@
     />
 
     <!-- styles css -->
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Furniture Store</title>
+    <link rel="stylesheet" href="../../../../styles.css" />
   </head>
+
   <body>
   <nav class="navbar page">
     <div class="nav-center">
@@ -53,7 +54,7 @@
   </nav>
   <section class="page-hero">
     <div class="section-center">
-      <h3 class="page-hero-title">Home</h3>
+      <h3 class="page-hero-title">Home / Attacks</h3>
     </div>
   </section>
   <div class="sidebar-overlay">
@@ -108,37 +109,42 @@
         </footer>
       </aside>
     </div>
-    <section class="section featured">
-      <div class="title">
-        <h2><span></span> Products</h2>
+    <section class="section section-center attacks-page">
+        <br/>
+      <h3>Redirect XSS</h3>
+      <div class="attack-about">
+        <br>...<br><br>
       </div>
-      <div class="featured-center section-center">
-        <h2 class="section-loading">loading...</h2>
-        <!-- single product -->
-        <!-- <article class="product">
-          <div class="product-container">
-            <img src="./images/main-bcg.jpeg" class="product-img img" alt="" />
-           
-            <div class="product-icons">
-              <a href="product.html?id=1" class="product-icon">
-                <i class="fas fa-search"></i>
-              </a>
-              <button class="product-cart-btn product-icon" data-id="1">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <footer>
-            <p class="product-name">name</p>
-            <h4 class="product-price">$9.99</h4>
-          </footer>
-        </article> -->
-        <!-- end of single product -->
+      <br/>
+      <h3>Instructions</h3><br>
+      <ol>
+        <li>Predstavime si utok zvany Redirect XSS (Cross site scripting). Utok funguje na baze chybneho pouzivania linkov a redirectov na ine podstranky aplikacii.
+        Utocnik vyuzije tuto zranitelnost na premiestnenie pouzivatela na nezname stranku podla vyberu utocnika. Utok spociva zvycajne nevinnym kliknutim na link, ktory sa reprezentuje
+        ako link na aplikacie, co je v podstate pravda ale v url ma parameter, ktory obsahuje link na skodlivu stranku.</li>
+        <li>Pri prkeliku z hlavnej stranky utokov sa nam do parametru url nastavil atribut "redirect", ktory obsahuje hodnotu, ktora repzrezentuje absolutnu cestu kam
+        mame byt nasledne presmerovany. Tuto hodnotu vyuziva tlacidlo "Click to go home" a po kliku na tlacidlo nas presmeruje na domovsku obrazovku aplikacie.</li>
+        <li>Takato funkcionalita otvara moznosti utokov tykajuce sa presmerovania pouzivatela na nevhodnu stranku. Staci name do parametra vlozit link na akukolvek stranku
+        a tento cely link vratane domeny a hostu poslat obeti s tym, ze ocakvame ze obet klikne na link. Obet klikne na link a pri kliku na tlacidlo ju presmeruje na nami zvolenu stranku.</li>
+        <li>Url moze vyzerat nasledovne:<pre><a href="http://localhost:63342/js-e-commerce/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/">
+            http://localhost:63342/js-e-commerce/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/</a></pre>
+        </li>
+        <br>
+        <li>Pri kliku na url nas presmeruje na stranku na ktorej sa nachadzame ale uz s nastavenym parametrom na skodlivu stranku.</li>
+        <li>Po kliku na tlacidlo sme boli presmerovany na "skodlivu" stranku https://hackertyper.net.</li>
+      </ol>
+      <div class="func-eval-demo">
+        <h3>Return Home</h3>
+        <button id="home-button">Click to go home</button>
       </div>
-      <a href="./src/pages/products/products.html" class="btn"> all products </a>
+      <div class="video__wrapper">
+        <video controls >
+          <source src="/js-e-commerce/src/assets/videos/redirect-xss.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </section>
-    <script type="module" src="./index.js"></script>
   <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
   <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+  <script type="module" src="./redirectXss.js"></script>
   </body>
 </html>

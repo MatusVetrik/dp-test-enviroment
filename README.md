@@ -6,7 +6,6 @@ This is the code for an e-commerce web application, built with HTML, CSS, and Ja
 - HTML
 - CSS
 - JavaScript
-- [Bootstrap](https://getbootstrap.com/)
 - [Firebase](https://firebase.google.com/) (for database and authentication)
 
 ## Features

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attacks</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -10,9 +11,9 @@
     />
 
     <!-- styles css -->
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Furniture Store</title>
+    <link rel="stylesheet" href="../../../styles.css" />
   </head>
+
   <body>
   <nav class="navbar page">
     <div class="nav-center">
@@ -53,7 +54,7 @@
   </nav>
   <section class="page-hero">
     <div class="section-center">
-      <h3 class="page-hero-title">Home</h3>
+      <h3 class="page-hero-title">Home / Attacks</h3>
     </div>
   </section>
   <div class="sidebar-overlay">
@@ -108,37 +109,52 @@
         </footer>
       </aside>
     </div>
-    <section class="section featured">
-      <div class="title">
-        <h2><span></span> Products</h2>
-      </div>
-      <div class="featured-center section-center">
-        <h2 class="section-loading">loading...</h2>
-        <!-- single product -->
-        <!-- <article class="product">
-          <div class="product-container">
-            <img src="./images/main-bcg.jpeg" class="product-img img" alt="" />
-           
-            <div class="product-icons">
-              <a href="product.html?id=1" class="product-icon">
-                <i class="fas fa-search"></i>
-              </a>
-              <button class="product-cart-btn product-icon" data-id="1">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <footer>
-            <p class="product-name">name</p>
-            <h4 class="product-price">$9.99</h4>
-          </footer>
-        </article> -->
-        <!-- end of single product -->
-      </div>
-      <a href="./src/pages/products/products.html" class="btn"> all products </a>
+    <section class="section section-center attacks-page">
+      <section class="attacks-section">
+        <ul>
+          <a href="./redirectXss/redirectXss.html?redirect=/js-e-commerce/index.html">
+            <li>Redirect XSS</li>
+          </a>
+          <a href="./domXssEval/domXssEval.html">
+            <li >DOM XSS - eval()</li>
+          </a>
+          <a href="./domXssWrite/domXssWrite.html">
+            <li>DOM XSS - document.write()</li>
+          </a>
+          <a href="./sensitiveDataExposure/sensitiveDataExposure.html">
+            <li>Sensitive data exposure</li>
+          </a>
+          <a href="./redos/redos.html">
+            <li>Incorrect Regular Expression (ReDoS)</li>
+          </a>
+          <a href="./insecureDeserialization/insecureDeserialization.html">
+            <li>Insecure deserialization</li>
+          </a>
+          <a href="./clickJacking/clickJacking.html">
+            <li>Clickjacking</li>
+          </a>
+          <a href="./polution/polution.html">
+            <li>Prototype pollution</li>
+          </a>
+          <a href="./csrf/csrf.html" >
+            <li >CSRF</li>
+          </a>
+          <a href="./reflectedXss/reflectedXss.html">
+            <li>Reflected XSS</li>
+          </a>
+          <a href="./storedXss/storedXSS.html">
+            <li>Stored XSS</li>
+          </a>
+          <a href="./idor/idor.html">
+            <li>IDOR</li>
+          </a>
+          <a href="./sensitiveDataExposure/sdeJuiceshop.html">
+            <li>Sensitive data exposure</li>
+          </a>
+        </ul>
+      </section>
     </section>
-    <script type="module" src="./index.js"></script>
-  <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
-  <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+    <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
+    <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
   </body>
 </html>

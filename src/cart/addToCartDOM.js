@@ -1,4 +1,4 @@
-import { formatPrice, getElement } from '../utils.js';
+import { formatPrice, getElement } from '../utils/utils.js';
 const cartItemsDOM = getElement('.cart-items');
 const addToCartDOM = ({ id, name, price, image, amount }) => {
   const article = document.createElement('article');

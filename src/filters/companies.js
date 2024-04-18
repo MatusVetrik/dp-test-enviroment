@@ -1,5 +1,5 @@
-import { getElement } from '../utils.js';
-import display from '../displayProducts.js';
+import { getElement } from '../utils/utils.js';
+import display from '../products/displayProducts.js';
 
 const setupCompanies = (store) => {
   let companies = ['all', ...new Set(store.map((product) => product.company))];

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attacks</title>
+    <!-- font-awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="../../../../styles.css" />
+</head>
+
+<body>
+<nav class="navbar page">
+    <div class="nav-center">
+        <!-- links -->
+        <div>
+            <button class="toggle-nav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li>
+                    <a href="/js-e-commerce/index.html" class="nav-link"> home </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/products/products.html" class="nav-link"> products </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/about/about.html" class="nav-link"> about </a>
+                </li>
+                <li>
+                    <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="nav-link attacks"> attacks </a>
+                </li>
+            </ul>
+        </div>
+
+        <p class="user-name"></p>
+
+        <button class="log-out__button" id="signOutButton">
+            <a href="../auth/login.html" id="log-out__link">Log out</a>
+        </button>
+
+        <div class="toggle-container">
+            <button class="toggle-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-item-count">1</span>
+        </div>
+    </div>
+</nav>
+<section class="page-hero">
+    <div class="section-center">
+        <h3 class="page-hero-title">Home / Attacks</h3>
+    </div>
+</section>
+<div class="sidebar-overlay">
+    <aside class="sidebar">
+        <!-- close -->
+        <button class="sidebar-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <!-- links -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="/js-e-commerce/index.html" class="sidebar-link">
+                    <i class="fas fa-home fa-fw"></i>
+                    home
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/products/products.html" class="sidebar-link">
+                    <i class="fas fa-couch fa-fw"></i>
+                    products
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/about/about.html" class="sidebar-link">
+                    <i class="fas fa-book fa-fw"></i>
+                    about
+                </a>
+            </li>
+            <li>
+                <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="sidebar-link attacks">
+                    <i class="fas fa-book fa-fw"></i>
+                    attacks
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<div class="cart-overlay">
+    <aside class="cart">
+        <button class="cart-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <header>
+            <h3 class="text-slanted">your bag</h3>
+        </header>
+        <!-- cart items -->
+        <div class="cart-items"></div>
+        <!-- footer -->
+        <footer>
+            <h3 class="cart-total text-slanted">total : $12.99</h3>
+            <button class="cart-checkout btn">checkout</button>
+        </footer>
+    </aside>
+</div>
+<section class="section section-center attacks-page">
+    <br/>
+    <h3>Sensititve data exposure</h3>
+    <div class="attack-about">
+        <br>...<br><br>
+    </div>
+    <br/>
+    <h3>Instructions</h3><br>
+    <ol>
+        <li>Vseobecne nie je spravne nechavat na tvrdo napisane citlive udaje priamo v kode, v cistom javascripte uz vobec. Vo vyvojarskej konzoli je naformatovany zdrojovy kod kde si vieme vsetko dohladat.</li>
+        <li>Klavesou F12 si vieme orvorit vyvojarsku konzolu. Preklikneme sa na tab "Sources" a mozeme vidiet vsetky zdrojove kody, ktore boli pri nacitavani strnaky nacitane.</li>
+        <li>Postupne mozeme prechadzat skript po skripte a hladat citilive udaje. Jednym z nich moze byt napriklad API key, ktory je v podstate pristupovy kluc ku danej sluzbe. Nas v tomto pripade
+        bude zaujimat pristupovy kluc ku Firebase API, vdaka ktoremu budeme moct zistak akekolvek udaje ulozene vo Firebase ucte vyvojara aplikacie alebo vlastnika aplikacie.</li>
+        <li>Kliknime na lubovolny skript a kombinaciou klaves Ctrl + F dame vyhladavat klucove slovo v subore. Skusme vyhladat "apiKey" a postupne prechadzat jednotlive subory kym nenajdeme zhodu.</li>
+        <li><pre>
+            const firebaseConfig = {
+              apiKey: "AIzaSyCx_Vvo5GYYtbjFgSm0GtQv7TWb6mrAZWg",
+              authDomain: "diplomovka-test-app.firebaseapp.com",
+              projectId: "diplomovka-test-app",
+              storageBucket: "diplomovka-test-app.appspot.com",
+              messagingSenderId: "548553603020",
+              appId: "1:548553603020:web:6628aba4fcd24cbf19cf69",
+            };
+        </pre></li>
+        <li>Zhoda bola najdena v subore auth.js a nachadza sa tu cela konfiguracia pre pouzitie sluzby.</li>
+        <li>Teraz si mozeme vytvorit vlastny skript a zavolat lubovolne metody z API a spristupnit rozne data o zaregistrovanych pouzivateloch.</li>
+    </ol>
+    <div class="video__wrapper">
+        <video controls >
+            <source src="/js-e-commerce/src/assets/videos/sensitive-data-expousure.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+<script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
+<script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+</body>
+</html>
