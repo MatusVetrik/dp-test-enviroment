@@ -24,16 +24,16 @@
         </button>
         <ul class="nav-links">
           <li>
-            <a href="/js-e-commerce/index.html" class="nav-link"> home </a>
+            <a href="/dp-test-enviroment/index.html" class="nav-link"> home </a>
           </li>
           <li>
-            <a href="/js-e-commerce/src/pages/products/products.html" class="nav-link"> products </a>
+            <a href="/dp-test-enviroment/src/pages/products/products.html" class="nav-link"> products </a>
           </li>
           <li>
-            <a href="/js-e-commerce/src/pages/about/about.html" class="nav-link"> about </a>
+            <a href="/dp-test-enviroment/src/pages/about/about.html" class="nav-link"> about </a>
           </li>
           <li>
-            <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="nav-link attacks"> attacks </a>
+            <a href="/dp-test-enviroment/src/pages/attacks/attacks.html?redirect=/dp-test-enviroment/index.html" class="nav-link attacks"> attacks </a>
           </li>
         </ul>
       </div>
@@ -54,7 +54,7 @@
   </nav>
   <section class="page-hero">
     <div class="section-center">
-      <h3 class="page-hero-title">Home / Attacks</h3>
+      <h3 class="page-hero-title">Home / Tools</h3>
     </div>
   </section>
   <div class="sidebar-overlay">
@@ -66,25 +66,25 @@
       <!-- links -->
       <ul class="sidebar-links">
         <li>
-          <a href="/js-e-commerce/index.html" class="sidebar-link">
+          <a href="/dp-test-enviroment/index.html" class="sidebar-link">
             <i class="fas fa-home fa-fw"></i>
             home
           </a>
         </li>
         <li>
-          <a href="/js-e-commerce/src/pages/products/products.html" class="sidebar-link">
+          <a href="/dp-test-enviroment/src/pages/products/products.html" class="sidebar-link">
             <i class="fas fa-couch fa-fw"></i>
             products
           </a>
         </li>
         <li>
-          <a href="/js-e-commerce/src/pages/about/about.html" class="sidebar-link">
+          <a href="/dp-test-enviroment/src/pages/about/about.html" class="sidebar-link">
             <i class="fas fa-book fa-fw"></i>
             about
           </a>
         </li>
         <li>
-          <a href="/js-e-commerce/src/pages/attacks/attacks.html" class="sidebar-link attacks">
+          <a href="/dp-test-enviroment/src/pages/attacks/attacks.html?redirect=/dp-test-enviroment/index.html" class="sidebar-link attacks">
             <i class="fas fa-book fa-fw"></i>
             attacks
           </a>
@@ -111,50 +111,32 @@
     </div>
     <section class="section section-center attacks-page">
       <section class="attacks-section">
-        <ul>
-          <a href="./redirectXss/redirectXss.html?redirect=/js-e-commerce/index.html">
-            <li>Redirect XSS</li>
-          </a>
-          <a href="./domXssEval/domXssEval.html">
-            <li >DOM XSS - eval()</li>
-          </a>
-          <a href="./domXssWrite/domXssWrite.html">
-            <li>DOM XSS - document.write()</li>
-          </a>
-          <a href="./sensitiveDataExposure/sensitiveDataExposure.html">
-            <li>Sensitive data exposure</li>
-          </a>
-          <a href="./redos/redos.html">
-            <li>Incorrect Regular Expression (ReDoS)</li>
-          </a>
-          <a href="./insecureDeserialization/insecureDeserialization.html">
-            <li>Insecure deserialization</li>
-          </a>
-          <a href="./clickJacking/clickJacking.html">
-            <li>Clickjacking</li>
-          </a>
-          <a href="./polution/polution.html">
-            <li>Prototype pollution</li>
-          </a>
-          <a href="./csrf/csrf.html" >
-            <li >CSRF</li>
-          </a>
-          <a href="./reflectedXss/reflectedXss.html">
-            <li>Reflected XSS</li>
-          </a>
-          <a href="./storedXss/storedXSS.html">
-            <li>Stored XSS</li>
-          </a>
-          <a href="./idor/idor.html">
-            <li>IDOR</li>
-          </a>
-          <a href="./sensitiveDataExposure/sdeJuiceshop.html">
-            <li>Sensitive data exposure</li>
-          </a>
-        </ul>
+          <div>
+            <h4>Calculator</h4>
+            <input id="eval-input" placeholder="Enter equation..." />
+            <div id="eval-result" ></div>
+          </div>
+          <div>
+            <h4 >Export order</h4>
+            <input class="export-name" placeholder="Type name of export..." value="My export" />
+            <button class="checkout-export">Export</button>
+          </div>
+          <div>
+            <h4>Return Home</h4>
+            <button id="home-button">Go home</button>
+          </div>
+          <div>
+            <h4>Verify email</h4>
+            <input id="email-verify-input" placeholder="Enter email..." />
+            <div id="email-verify-result" ></div>
+          </div>
       </section>
     </section>
-    <script type="module" src="/js-e-commerce/src/pages/auth/auth.js"></script>
-    <script type="module" src="/js-e-commerce/src/cart/setupCart.js"></script>
+    <script type="module" src="/dp-test-enviroment/src/pages/auth/auth.js"></script>
+    <script type="module" src="/dp-test-enviroment/src/cart/setupCart.js"></script>
+    <script type="module" src="./domXssEval.js"></script>
+    <script type="module" src="./domXssWrite.js"></script>
+    <script type="module" src="./redos.js"></script>
+    <script type="module" src="./redirectXss.js"></script>
   </body>
 </html>

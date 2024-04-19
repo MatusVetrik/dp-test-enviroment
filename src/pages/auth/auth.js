@@ -91,7 +91,7 @@ const checkAuthState = async () => {
 };
 
 userName?.addEventListener('click', () => {
-    location.assign("/js-e-commerce/profile.html");
+    location.assign("/dp-test-enviroment/profile.html");
 })
 
 checkAuthState();
