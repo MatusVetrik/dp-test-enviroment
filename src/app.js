@@ -1,6 +1,7 @@
 const express = require("express");
 const { initializeApp } = require("firebase/app");
 const { getAuth, updatePassword } = require("firebase/auth");
+const {firebaseConfig} = require("./firebaseConfig");
 
 const app = express();
 
@@ -11,19 +12,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-
-
 const router = express.Router();
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCx_Vvo5GYYtbjFgSm0GtQv7TWb6mrAZWg",
-  authDomain: "diplomovka-test-app.firebaseapp.com",
-  projectId: "diplomovka-test-app",
-  storageBucket: "diplomovka-test-app.appspot.com",
-  messagingSenderId: "548553603020",
-  appId: "1:548553603020:web:6628aba4fcd24cbf19cf69",
-};
-
 const authApp = initializeApp(firebaseConfig);
 const auth = getAuth(authApp);
 
