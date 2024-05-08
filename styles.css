@@ -897,7 +897,7 @@ Single Product Page
   text-align: center;
 }
 
-.checkout-pay__wrapper > button{
+.checkout-pay__wrapper > input{
   width: 5rem;
   height: 2rem;
   background-color: var(--clr-grey-1);
@@ -906,7 +906,7 @@ Single Product Page
   font-size: 0.8em;
 }
 
-.checkout-pay__wrapper > button:hover{
+.checkout-pay__wrapper > input:hover{
   opacity: 0.8;
 }
 
@@ -939,19 +939,19 @@ Single Product Page
   margin-top: 1rem;
 }
 
-.attacks {
+.tools {
   color: var(--clr-red-dark) !important;
   font-weight: bold;
 }
 
-.attacks-page {
+.tools-page {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.attacks-section{
+.tools-section{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -959,7 +959,7 @@ Single Product Page
   width: 100%;
 }
 
-.attacks-section > div {
+.tools-section > div {
   border: 0.063rem solid var(--clr-grey-8);
   background-color: var(--clr-grey-10);
   height: 20rem;
@@ -975,22 +975,22 @@ Single Product Page
   min-width: 12rem;
 }
 
-.attacks-section > div > h4{
+.tools-section > div > h4{
   font-size: 1.1em;
 }
 
-.attacks-section > div > input{
+.tools-section > div > input{
   padding: 0.313rem;
   border-radius: 0.313rem;
   border: 0.063rem solid var(--clr-grey-6);
 }
 
-.attacks-section > div > input:focus{
+.tools-section > div > input:focus{
   outline: 0.063rem solid var(--clr-grey-5);
   box-shadow: 0 0.125rem 0.5rem var(--clr-grey-8);
 }
 
-.attacks-section > div > button{
+.tools-section > div > button{
   width: 5rem;
   padding: 0.25rem;
   border-radius: 0.313rem;
@@ -998,7 +998,7 @@ Single Product Page
   font-weight: bold;
 }
 
-.attacks-section > div > button:hover{
+.tools-section > div > button:hover{
   opacity: 0.8;
   transition: width 0.5s;
   width: 5.25rem;

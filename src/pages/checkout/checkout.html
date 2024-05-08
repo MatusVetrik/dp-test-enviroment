@@ -32,7 +32,7 @@
             <a href="/dp-test-enviroment/src/pages/about/about.html" class="nav-link"> about </a>
           </li>
           <li>
-            <a href="/dp-test-enviroment/src/pages/attacks/attacks.html?redirect=/dp-test-enviroment/index.html" class="nav-link attacks"> attacks </a>
+            <a href="/dp-test-enviroment/src/pages/tools/tools.html?redirect=/dp-test-enviroment/index.html" class="nav-link tools"> tools </a>
           </li>
         </ul>
       </div>
@@ -83,9 +83,9 @@
           </a>
         </li>
         <li>
-          <a href="/dp-test-enviroment/src/pages/attacks/attacks.html?redirect=/dp-test-enviroment/index.html" class="sidebar-link attacks">
+          <a href="/dp-test-enviroment/src/pages/tools/tools.html?redirect=/dp-test-enviroment/index.html" class="sidebar-link tools">
             <i class="fas fa-book fa-fw"></i>
-            attacks
+            tools
           </a>
         </li>
       </ul>
@@ -112,7 +112,7 @@
       <div class="title">
         <h2>Checkout</h2>
       </div>
-      <div class="checkout">
+      <form class="checkout checkout-form">
         <div class="checkout-cell">
           <label>Email:</label>
           <p class="checkout-email">---</p>
@@ -125,18 +125,19 @@
           <label>Card information:</label>
           <input
             type="text"
+            name="card"
             placeholder="card information"
             class="card-info-input"
           />
         </div>
         <div class="checkout-cell">
           <label>Total:</label>
-          <p class="checkout-total"></p>
+          <input type="text" name="price" class="checkout-total" disabled/>
         </div>
         <div class="checkout-pay__wrapper">
-          <button class="checkout-pay">Pay</button>
+          <input type="submit" value="Pay" class="checkout-pay"/>
         </div>
-      </div>
+      </form>
     </section>
   <script type="module" src="/dp-test-enviroment/src/pages/auth/auth.js"></script>
   <script type="module" src="/dp-test-enviroment/src/cart/setupCart.js"></script>

@@ -1,35 +1,42 @@
 const express = require("express");
-const { initializeApp } = require("firebase/app");
-const { getAuth, updatePassword } = require("firebase/auth");
-const {firebaseConfig} = require("./firebaseConfig");
+const bodyParser = require('body-parser')
 
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-const router = express.Router();
-const authApp = initializeApp(firebaseConfig);
-const auth = getAuth(authApp);
+const proceedTransaction = (card, price) => {
+    // Transaction...
+};
 
-router.get('/change-password', (req, res) => {
-  const newPassword = req.query.newPassword; // Assuming the new password is sent as a query parameter
+app.post('/checkout', (req, res) => {
+  console.log('called')
+  const data = req.body
+  const price = data.price;
+  const card = data.card;
 
-  if (!newPassword) {
-    return res.status(400).send('New password not provided');
+  if (!price) {
+    return res.status(400).send('Price not provided');
+  }
+  if (!card) {
+    return res.status(400).send('Card not provided');
   }
 
-  // Update the password
-  updatePassword(auth.currentUser, newPassword)
-      .then(() => {
-        res.send('Password changed successfully');
-      })
-      .catch(error => {
-        console.error('Error updating password:', error.message);
-        res.status(500).send('Error updating password');
-      });
+  proceedTransaction(card, price);
+
+  res.send("Payment Request Succeed")
 });

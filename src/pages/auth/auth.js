@@ -7,11 +7,7 @@ import {
     signOut,
     updatePassword
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import {firebaseConfig} from "../../firebaseConfig";
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const user = auth.currentUser;
+import {firebaseConfig} from "../../firebaseConfig.js";
 
 const userEmail = document.querySelector("#userEmail");
 const userEmailReg = document.querySelector("#userEmailReg");
@@ -22,12 +18,15 @@ const signUpRedirectButton = document.querySelector("#signUpRedirectButton");
 const signInButton = document.querySelector("#signInButton");
 const signOutButton = document.querySelector("#signOutButton");
 
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 const userSignUp = async () => {
     const signUpEmail = userEmailReg.value;
     const signUpPassword = userPasswordReg.value;
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
         .then(() => {
-            location.assign("/index.html");
+            location.assign("/dp-test-enviroment/index.html");
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -52,7 +51,7 @@ const userSignIn = async () => {
             const encodedUser = btoa(JSON.stringify(cookieUser));
             document.cookie = `user=${encodedUser}`;
 
-            location.assign("index.html");
+            location.assign("/dp-test-enviroment/index.html");
         })
         .catch((error) => {
             const errorCode = error.code;

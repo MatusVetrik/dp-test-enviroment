@@ -1,31 +1,15 @@
-# E-Commerce App
+# E-shop
 
-This is the code for an e-commerce web application, built with HTML, CSS, and JavaScript.
+Aplikácia predstavuje testovacie prostredie pre demnoštráciu javascript zraniteľností. Aplikácia obsahuje zraniteľné funkcie a konštrukcie,
+ktoré otvárajú možnosti útokom. Inštrukcie s útokmi sa nachádzajú v repozitári https://github.com/MatusVetrik/dp-attacks-instructions.
 
-## Technologies Used
+## Použité technológie
 - HTML
 - CSS
 - JavaScript
-- [Firebase](https://firebase.google.com/) (for database and authentication)
+- [Firebase](https://firebase.google.com/)
 
-## Features
-- User-friendly interface
-- Responsive design for mobile devices
-- Dynamic product listing
-- Shopping cart and checkout feature
-- User authentication and authorization with Firebase
-- Admin panel for managing products and orders
-
-## Getting Started
-1. Clone the repository
-2. Set up a Firebase project and configure the project's Firebase configuration in the `firebaseConfig.js` file.
-3. Open the `index.html` file in your browser to view the application.
-
-## Deployment
-This app can be deployed on any web server of your choice.
-
-## Note
-Please make sure to update the `firebaseConfig.js` file with your own Firebase configuration before deploying the app in production.
-
-## Author
-salatech
+## Inštalácia
+1. Naklonujte repozitár na svoje zariadenie
+2. V prípade, že chcete používať vlastnú databázu používateľov tak potrebujete vytvoriť Firebase konto https://firebase.google.com/docs/auth a upraviť konfiguráciu vo `firebaseConfig.js` súboru.
+3. Otvorte `/dp-test-enviroment/index.html` súbor v prehliadači.

@@ -18,7 +18,7 @@ const cartCheckoutBtn = document.querySelector(".cart-checkout");
 cartCheckoutBtn?.addEventListener("click", () => {
   const totalPrice = localStorage.getItem("total");
 
-  if (+totalPrice > 0) location.assign("/checkout.html");
+  if (+totalPrice > 0) location.assign("/dp-test-enviroment/src/pages/checkout/checkout.html");
 });
 
 let cart = getStorageItem("cart");
